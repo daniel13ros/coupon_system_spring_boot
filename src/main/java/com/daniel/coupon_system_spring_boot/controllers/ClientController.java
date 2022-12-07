@@ -1,5 +1,6 @@
 package com.daniel.coupon_system_spring_boot.controllers;
 
+import com.daniel.coupon_system_spring_boot.beans.ClientType;
 import com.daniel.coupon_system_spring_boot.exceptions.CouponCostumeException;
 import com.daniel.coupon_system_spring_boot.login.LoginManager;
 import com.daniel.coupon_system_spring_boot.services.AdminService;
@@ -30,7 +31,7 @@ public abstract class ClientController {
     @Autowired
     protected CustomerService customerService;
 
-    public abstract boolean login(String email,String password) throws CouponCostumeException;
+    public abstract boolean login(String email, String password , ClientType clientType) throws CouponCostumeException;
 
 
 

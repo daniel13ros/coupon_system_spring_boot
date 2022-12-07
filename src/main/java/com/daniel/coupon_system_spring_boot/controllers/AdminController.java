@@ -86,8 +86,8 @@ public class AdminController extends ClientController {
         return adminService.getSingleCustomer(customerId);
     }
 
-    @PostMapping("/login")
-    public boolean login(String email, String password) throws CouponCostumeException {
+    @PostMapping("/login/{email}&&{password}")
+    public boolean login(@RequestParam String email,@RequestParam String password,@RequestParam ClientType clientType) throws CouponCostumeException {
         adminService = (AdminService) loginManager.login(email, password, ClientType.Administrator);
         if (adminService == null) {
             throw new CouponCostumeException(ErrMsg.EMAIL_OR_PASS_WRONG);

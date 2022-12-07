@@ -62,8 +62,8 @@ public class CompanyController extends ClientController {
         companyService.getCompanyDetails(companyId);
     }
 
-    @PostMapping("/login")
-    public boolean login(String email, String password) throws CouponCostumeException {
+    @PostMapping("/login/{email}&&{password}")
+    public boolean login(@RequestParam String email,@RequestParam String password,@RequestParam ClientType clientType) throws CouponCostumeException {
         companyService = (CompanyService) loginManager.login(email, password, ClientType.Company);
         if (companyService == null) {
             throw new CouponCostumeException(ErrMsg.EMAIL_OR_PASS_WRONG);
