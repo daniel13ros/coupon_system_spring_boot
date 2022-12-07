@@ -47,8 +47,8 @@ public class CustomerController extends ClientController   {
         customerService.getCustomerDetails(customerId);
     }
 
-    @PostMapping("/login/{email}&&{password}")
-    public boolean login(@RequestParam String email,@RequestParam String password,@RequestParam ClientType clientType) throws CouponCostumeException {
+    @PostMapping("/login/{email}&{password}")
+    public boolean login(@RequestParam String email,@RequestParam String password) throws CouponCostumeException {
         customerService = (CustomerService) loginManager.login(email, password, ClientType.Customer);
         if (customerService == null) {
             throw new CouponCostumeException(ErrMsg.EMAIL_OR_PASS_WRONG);

@@ -31,7 +31,7 @@ public abstract class ClientController {
     @Autowired
     protected CustomerService customerService;
 
-    public abstract boolean login(String email, String password , ClientType clientType) throws CouponCostumeException;
+    public abstract boolean login(String email, String password ) throws CouponCostumeException;
 
 
 
