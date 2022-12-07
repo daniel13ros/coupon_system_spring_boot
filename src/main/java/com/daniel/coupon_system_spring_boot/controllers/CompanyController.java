@@ -30,7 +30,7 @@ public class CompanyController extends ClientController {
     @PutMapping("{companyId}/coupons/{couponId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateCoupon(@PathVariable int companyId, @RequestBody Coupon coupon,@PathVariable int couponId) throws CouponCostumeException {
-        companyService.updateCoupon(couponId, coupon,companyId);
+        companyService.updateCoupon(companyId, coupon,couponId);
         System.out.println("Updated");
     }
 

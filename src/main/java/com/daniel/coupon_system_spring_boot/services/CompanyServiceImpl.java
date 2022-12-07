@@ -25,8 +25,9 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
         if (couponRepository.existsByTitleAndCompanyId(coupon.getTitle(), companyId)) {
             throw new CouponCostumeException(ErrMsg.COUPON_EXIST_BT_TITLE);
         }
-        coupon.setCompany(this.companyRepository.findById(companyId).orElseThrow());
+        coupon.setCompany(companyRepository.findById(companyId).orElseThrow());
         couponRepository.save(coupon);
+        companyRepository.save(companyRepository.findById(companyId).orElseThrow());
     }
 
     @Override
@@ -37,6 +38,7 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
         if (companyId!= couponRepository.findById(couponId).get().getCompany().getId()) {
             throw new CouponCostumeException(ErrMsg.CANNOT_UPDATE_ID_COUPON);
         }
+        coupon.setCompany(companyRepository.findById(companyId).get());
         couponRepository.saveAndFlush(coupon);
     }
 

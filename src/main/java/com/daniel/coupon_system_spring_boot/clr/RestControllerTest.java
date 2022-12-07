@@ -84,7 +84,7 @@ public class RestControllerTest implements CommandLineRunner {
                 .build();
 
         Coupon coupon10 = Coupon.builder()
-                .company(company10)
+                .company(company11)
                 .category(Category.Electronics)
                 .title("title10")
                 .description("desc10")
@@ -94,6 +94,7 @@ public class RestControllerTest implements CommandLineRunner {
                 .price(534)
                 .image("aaa")
                 .build();
+
         Coupon coupon11 = Coupon.builder()
                 .company(company10)
                 .category(Category.Electronics)
@@ -208,15 +209,19 @@ public class RestControllerTest implements CommandLineRunner {
         System.out.println(res7);
         System.out.println((res7.getStatusCodeValue() == 201) ? "OK" : "SOMETHING WENT WRONG");
 
+
         BeautifyUtil.title("add new Coupon");
-        ResponseEntity<String> res8 = restTemplate.postForEntity(urlCompany + "/7/coupons", coupon11, String.class);
+        ResponseEntity<String> res8 = restTemplate.postForEntity(urlCompany + "/6/coupons", coupon11, String.class);
         System.out.println(res8);
         System.out.println((res8.getStatusCodeValue() == 201) ? "OK" : "SOMETHING WENT WRONG");
 
         BeautifyUtil.title("add new Coupon");
-        ResponseEntity<String> res9 = restTemplate.postForEntity(urlCompany + "/7/coupons", coupon12, String.class);
+        ResponseEntity<String> res9 = restTemplate.postForEntity(urlCompany + "/6/coupons", coupon12, String.class);
+        System.out.println(coupon12);
         System.out.println(res9);
         System.out.println((res9.getStatusCodeValue() == 201) ? "OK" : "SOMETHING WENT WRONG");
+
+
 
         try {
             BeautifyUtil.title("update coupon 10");

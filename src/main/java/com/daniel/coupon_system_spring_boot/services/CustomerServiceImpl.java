@@ -43,6 +43,7 @@ public class CustomerServiceImpl extends ClientService implements CustomerServic
         }
         Customer c = this.customerRepository.findById(customerId).orElseThrow();
         coupon.setAmount(coupon.getAmount()-1);
+        coupon.setCompany(couponRepository.findById(couponId).get().getCompany());
         c.getCoupons().add(coupon);
         this.customerRepository.save(c);
         this.couponRepository.save(coupon);
