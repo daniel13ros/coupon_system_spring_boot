@@ -16,7 +16,7 @@ public interface CompanyService {
 
     void updateCoupon(int companyId, Coupon coupon , int couponId) throws CouponCostumeException;
 
-    void deleteCoupon(int couponId) throws CouponCostumeException;
+    void deleteCoupon(int companyId , int couponId) throws CouponCostumeException;
 
     List<Coupon> getCompanyCoupons(int companyId);
 

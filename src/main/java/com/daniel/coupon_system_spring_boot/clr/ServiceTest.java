@@ -204,7 +204,7 @@ public class ServiceTest implements CommandLineRunner {
         coupon1.setCategory(Category.Gifts);
         companyService1.updateCoupon(1, coupon1 , 1);
 
-        companyService1.deleteCoupon(5);
+        companyService1.deleteCoupon(1,5);
 
         BeautifyUtil.title( "company 1 coupons" );
         companyService1.getCompanyCoupons(company1.getId()).forEach(System.out::println);

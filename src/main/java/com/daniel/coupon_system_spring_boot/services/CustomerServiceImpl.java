@@ -72,6 +72,6 @@ public class CustomerServiceImpl extends ClientService implements CustomerServic
         System.out.println("email :"+customerRepository.findById(customerId).get().getEmail());
         System.out.println("password :"+customerRepository.findById(customerId).get().getPassword());
         System.out.println("coupons :");
-        customerRepository.findById(customerId).get().getCoupons().forEach(System.out::println);;
+        customerRepository.findById(customerId).get().getCoupons().forEach(System.out::println);
     }
 }

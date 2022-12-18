@@ -42,4 +42,6 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
     @Transactional
     @Query(value = "DELETE FROM `coupons_system`.`customers_coupons` m WHERE NOT EXISTS(SELECT NULL FROM `coupons_system`.`coupons` c where c.id=m.coupons_id)", nativeQuery = true)
     void deleteExpiredPurchase();
+
+    boolean existsByCompanyId(int companyId);
 }

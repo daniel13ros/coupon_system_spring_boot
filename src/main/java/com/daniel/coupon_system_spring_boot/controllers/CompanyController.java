@@ -35,10 +35,10 @@ public class CompanyController extends ClientController {
     }
 
 
-    @PostMapping("coupons/{couponId}")
+    @PostMapping("{companyId}/coupons/{couponId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCoupon(@PathVariable int couponId) throws CouponCostumeException {
-        companyService.deleteCoupon(couponId);
+    public void deleteCoupon(@PathVariable int companyId, @PathVariable int couponId) throws CouponCostumeException {
+        companyService.deleteCoupon(companyId,couponId);
         System.out.println("Deleted");
     }
 

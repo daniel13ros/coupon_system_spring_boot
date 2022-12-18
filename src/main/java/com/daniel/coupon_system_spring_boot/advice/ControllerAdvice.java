@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ControllerAdvice {
 
-        @ExceptionHandler(value = {CouponCostumeException.class})
-        @ResponseStatus(HttpStatus.BAD_REQUEST)
-        public ErrorDetails handle(Exception e){
-            return new ErrorDetails(e.getMessage());
-        }
+    @ExceptionHandler(value = {CouponCostumeException.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorDetails handle(Exception e) {
+        return new ErrorDetails(e.getMessage());
     }
+}
 
 

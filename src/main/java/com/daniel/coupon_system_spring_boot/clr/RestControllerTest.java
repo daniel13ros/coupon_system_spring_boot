@@ -222,7 +222,6 @@ public class RestControllerTest implements CommandLineRunner {
         System.out.println((res9.getStatusCodeValue() == 201) ? "OK" : "SOMETHING WENT WRONG");
 
 
-
         try {
             BeautifyUtil.title("update coupon 10");
             System.out.println("before-" + coupon10);
@@ -235,7 +234,7 @@ public class RestControllerTest implements CommandLineRunner {
         }
 
         BeautifyUtil.title("delete coupon  12");
-        restTemplate.postForEntity(urlCompany + "/coupons/9", coupon10, String.class);
+        restTemplate.postForEntity(urlCompany + "/6/coupons/9", coupon10, String.class);
 
         BeautifyUtil.title("get all coupons of company 1");
         Coupon[] allCouponsOf10 = restTemplate.getForObject(urlCompany + "/1/coupons/", Coupon[].class);
@@ -280,8 +279,7 @@ public class RestControllerTest implements CommandLineRunner {
         couponsUnder300.forEach(System.out::println);
 
         BeautifyUtil.title("customer 2 details");
-        Customer customerFromDbDetails = restTemplate.getForObject(urlCustomer + "/2/details", Customer.class);
-        System.out.println(customerFromDbDetails);
+        restTemplate.getForObject(urlCustomer + "/2/details", Customer.class);
 
         BeautifyUtil.startOrEnd("End of program");
     }

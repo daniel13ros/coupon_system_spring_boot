@@ -25,7 +25,8 @@ public enum ErrMsg {
     COUPON_EXPIRED("Coupon expired"),
     CANNOT_UPDATE_ID_CUSTOMER("cannot update customer id"),
     CANNOT_UPDATE_ID_COUPON("cannot update coupon id"),
-    ID_NOT_FOUND("id not found");
+    ID_NOT_FOUND("id not found"),
+    COUPON_DOES_NOT_BELONG_TO_COMPANY("No access to the company to delete a coupon");
 
 
     private String msg;
